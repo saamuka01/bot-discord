@@ -9,14 +9,14 @@ const client = new Client({
 });
 
 client.once("ready", () => {
-  console.log(`🤖 Bot ligado como ${client.user.tag}`);
+  console.log("🤖 Bot online!");
 });
 
-client.on("messageCreate", msg => {
-  if (msg.author.bot) return;
+client.on("messageCreate", (message) => {
+  if (message.author.bot) return;
 
-  if (msg.content === "!ping") {
-    msg.reply("🏓 Pong!");
+  if (message.content === "!ping") {
+    message.reply("Pong 🏓");
   }
 });
 
